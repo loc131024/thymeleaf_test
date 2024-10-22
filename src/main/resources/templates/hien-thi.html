@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Danh sách phòng ban</title>
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Danh sách phòng ban</h2>
+    <div class="mb-3">
+        <a th:href="@{/add}" class="btn btn-primary">Thêm mới</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Mã phòng ban</th>
+            <th scope="col">Tên phòng ban</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${list}">
+            <td th:text="${p.maPhongBan}"></td>
+            <td th:text="${p.tenPhongBan}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
